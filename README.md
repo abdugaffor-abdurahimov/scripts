@@ -1,1 +1,1 @@
-# automating-my-workflow
+# $app_name
