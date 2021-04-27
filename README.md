@@ -1,1 +1,1 @@
-# $app_name
+# Automating my workflow with simple scripts

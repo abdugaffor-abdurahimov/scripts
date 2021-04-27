@@ -1,14 +1,12 @@
 #!/bin/sh
 cd ~/Dev
 
-echo "Enter App Name"
-read app_name
+read -p "Enter app name: " app_name
 
 mkdir $app_name
 cd $app_name
 
-echo "Description"
-read description
+read -p "Description: " description
 
 # Create github repo
 git init
@@ -30,7 +28,7 @@ npm i -D typescript @types/cors @types/dotenv @types/express @types/express-list
 tsc --init
 
 
-mkdir src src/middlewares src/common
+mkdir src src/middlewares src/common src/routes
 
 # Error handler middleware
 echo "import HttpExeption from '../common/http-exception';
@@ -112,6 +110,6 @@ git commit -m "first commit"
 git branch -M main
 git push -u origin main
 
-echo "dev: ts-node-dev -r dotenv/config --respawn --pretty --transpile-only src/server.ts"
+echo '"dev": "ts-node-dev -r dotenv/config --respawn --pretty --transpile-only src/server.ts"'
 
 code .
